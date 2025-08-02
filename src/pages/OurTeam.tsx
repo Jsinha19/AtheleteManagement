@@ -133,7 +133,7 @@
 //           viewport={{ once: true, amount: 0.2 }}
 //         >
 //           <h2 className="text-center text-4xl md:text-5xl font-bold text-white mb-16">Meet The Visionaries</h2>
-          
+
 //           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
 //             {teamMembers.map((member) => (
 //               <motion.div key={member.name} className="text-white text-center" variants={cardVariants}>
@@ -151,7 +151,7 @@
 //                     style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }}
 //                   />
 //                 </div>
-                
+
 //                 {/* Text Content */}
 //                 <motion.div variants={containerVariants}>
 //                     <motion.h3 className="text-2xl font-bold" variants={listItemVariants}>
@@ -180,11 +180,11 @@
 
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { motion,type Variants } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 
 // --- Animation Variants ---
 
-const containerVariants:Variants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -192,7 +192,7 @@ const containerVariants:Variants = {
   }
 };
 
-const letterVariants:Variants = {
+const letterVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -204,7 +204,7 @@ const letterVariants:Variants = {
 // --- NEW ANIMATIONS for the column layout ---
 
 // For the image sliding in from the left
-const imageFromLeft:Variants = {
+const imageFromLeft: Variants = {
   hidden: { opacity: 0, x: -100, scale: 0.9 },
   visible: {
     opacity: 1,
@@ -215,7 +215,7 @@ const imageFromLeft:Variants = {
 };
 
 // For the image sliding in from the right
-const imageFromRight:Variants = {
+const imageFromRight: Variants = {
   hidden: { opacity: 0, x: 100, scale: 0.9 },
   visible: {
     opacity: 1,
@@ -226,16 +226,16 @@ const imageFromRight:Variants = {
 };
 
 // For the text content container
-const textContainerVariants:Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.2, delayChildren: 0.4 }
-    }
+const textContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, delayChildren: 0.4 }
+  }
 };
 
 // For the name and line drawing
-const nameAndLineVariants :Variants= {
+const nameAndLineVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
@@ -245,7 +245,7 @@ const nameAndLineVariants :Variants= {
 };
 
 // For the line drawing itself
-const lineDrawVariant:Variants = {
+const lineDrawVariant: Variants = {
   hidden: { scaleX: 0, originX: 0 },
   visible: {
     scaleX: 1,
@@ -254,7 +254,7 @@ const lineDrawVariant:Variants = {
 };
 
 // For individual list items fading in
-const listItemVariants:Variants = {
+const listItemVariants: Variants = {
   hidden: { opacity: 0, x: -20 },
   visible: {
     opacity: 1,
@@ -263,10 +263,15 @@ const listItemVariants:Variants = {
   }
 };
 
+// Add this interface near the top of the file, after the animation variants
+interface TeamMember {
+  name: string;
+  image: string;
+  details: string[];
+}
 
-// --- Team Member Data ---
-
-const teamMembers :Variants= [
+// Then modify the teamMembers array to use the interface
+const teamMembers: TeamMember[] = [
   {
     name: 'Rakan Alireza',
     image: '/team/rakan.png',
@@ -319,9 +324,9 @@ const OurTeam: React.FC = () => {
         <video className="absolute inset-0 w-full h-full object-cover" src="/videos/5.mp4" autoPlay loop muted playsInline />
         <div className="absolute inset-0 bg-black/40" />
         <motion.h1 className="relative z-10 text-white font-extrabold text-[12vw] leading-none tracking-tight text-center select-none" style={{ textShadow: '0 4px 32px rgba(0,0,0,0.7)' }} variants={containerVariants} initial="hidden" animate="visible">
-            {letters.map((letter, i) => (
-              <motion.span key={i} variants={letterVariants}>{letter === ' ' ? '\u00A0' : letter}</motion.span>
-            ))}
+          {letters.map((letter, i) => (
+            <motion.span key={i} variants={letterVariants}>{letter === ' ' ? '\u00A0' : letter}</motion.span>
+          ))}
         </motion.h1>
       </div>
 
@@ -329,26 +334,26 @@ const OurTeam: React.FC = () => {
       <div className="relative w-full py-20 md:py-28 overflow-hidden" style={{ backgroundColor: '#2B2A4C' }}>
         {/* Decorative Shapes */}
         <div className="absolute top-0 left-0 w-full h-full opacity-30">
-            <div className="absolute top-[10%] left-[5%] w-48 h-24 border-4 border-red-400" style={{ clipPath: 'polygon(0 0, 100% 0, 80% 100%, 20% 100%)' }}/>
-            <div className="absolute top-[5%] right-[10%] w-64 h-32 bg-red-500" style={{ clipPath: 'polygon(100% 0, 100% 100%, 20% 100%, 0 50%)' }}/>
-            <div className="absolute bottom-[5%] left-[20%] w-40 h-40 bg-red-500" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}/>
-            <div className="absolute bottom-[15%] right-[5%] w-56 h-28 border-4 border-red-400" style={{ clipPath: 'polygon(20% 0, 80% 0, 100% 100%, 0% 100%)' }}/>
+          <div className="absolute top-[10%] left-[5%] w-48 h-24 border-4 border-red-400" style={{ clipPath: 'polygon(0 0, 100% 0, 80% 100%, 20% 100%)' }} />
+          <div className="absolute top-[5%] right-[10%] w-64 h-32 bg-red-500" style={{ clipPath: 'polygon(100% 0, 100% 100%, 20% 100%, 0 50%)' }} />
+          <div className="absolute bottom-[5%] left-[20%] w-40 h-40 bg-red-500" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} />
+          <div className="absolute bottom-[15%] right-[5%] w-56 h-28 border-4 border-red-400" style={{ clipPath: 'polygon(20% 0, 80% 0, 100% 100%, 0% 100%)' }} />
         </div>
 
         <div className="relative container mx-auto px-4">
           <h2 className="text-center text-4xl md:text-5xl font-bold text-white mb-24">Meet The Visionaries</h2>
-          
+
           {/* Column Layout Container */}
           <div className="flex flex-col gap-24 md:gap-32">
             {teamMembers.map((member, index) => {
               const isReversed = index % 2 !== 0;
               return (
-                <div 
-                  key={member.name} 
+                <div
+                  key={member.name}
                   className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${isReversed ? 'md:flex-row-reverse' : ''}`}
                 >
                   {/* Image */}
-                  <motion.div 
+                  <motion.div
                     className="w-full md:w-5/12"
                     variants={isReversed ? imageFromRight : imageFromLeft}
                     initial="hidden"
@@ -361,9 +366,9 @@ const OurTeam: React.FC = () => {
                       className="rounded-lg shadow-2xl object-cover"
                     />
                   </motion.div>
-                  
+
                   {/* Text Content */}
-                  <motion.div 
+                  <motion.div
                     className="w-full md:w-7/12 text-white"
                     variants={textContainerVariants}
                     initial="hidden"
@@ -374,18 +379,18 @@ const OurTeam: React.FC = () => {
                       {member.name}
                     </motion.h3>
 
-                    <motion.div 
-                      className="h-1 w-24 bg-red-500 mt-4 mb-8" 
+                    <motion.div
+                      className="h-1 w-24 bg-red-500 mt-4 mb-8"
                       variants={lineDrawVariant}
                     />
-                    
+
                     <motion.ul className="space-y-4 text-gray-300 text-lg lg:text-xl list-none" variants={containerVariants}>
-                        {member.details.map((detail, i) => (
-                          <motion.li key={i} className="flex items-start" variants={listItemVariants}>
-                            <span className="text-red-500 mr-3 mt-1">➤</span>
-                            <span>{detail}</span>
-                          </motion.li>
-                        ))}
+                      {member.details.map((detail, i) => (
+                        <motion.li key={i} className="flex items-start" variants={listItemVariants}>
+                          <span className="text-red-500 mr-3 mt-1">➤</span>
+                          <span>{detail}</span>
+                        </motion.li>
+                      ))}
                     </motion.ul>
                   </motion.div>
                 </div>

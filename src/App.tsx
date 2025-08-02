@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import OurTeam from './pages/OurTeam';
 import Sponsorship from './pages/Sponsorship';
@@ -24,7 +24,9 @@ const AppContent: React.FC = () => {
     }
   }, [location.pathname]);
 
-  if (showLoader) return <Loader/>; // No navbar/footer while loader
+  if (showLoader) return <Loader onFinish={function (): void {
+    throw new Error('Function not implemented.');
+  } }/>; // No navbar/footer while loader
 
   return (
     <>

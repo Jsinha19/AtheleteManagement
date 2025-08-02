@@ -52,23 +52,23 @@ const itemVariants: Variants = {
 // --- The Main Sponsorship Benefits Component ---
 export const SponsorshipBenefits: React.FC = () => {
   return (
-    // Main section with the dark purple background
-    <section className="relative w-full bg-indigo-900 text-white py-20 md:py-28 overflow-hidden font-sans">
+    // Main section with a light shaded background
+    <section className="relative w-full bg-gray-100 text-gray-800 py-20 md:py-28 overflow-hidden font-sans">
       
-      {/* Decorative Background Elements */}
-      <div className="absolute -top-10 -right-10 w-48 h-48 opacity-10">
-        <div className="w-full h-full border-2 border-red-400 transform rotate-45" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
+      {/* Decorative Background Elements adjusted for light background */}
+      <div className="absolute -top-10 -right-10 w-48 h-48 opacity-30">
+        <div className="w-full h-full border-2 border-indigo-200 transform rotate-45" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
       </div>
-      <div className="absolute top-1/2 left-10 w-32 h-32 opacity-10">
-        <div className="w-full h-full border-2 border-red-400 transform -rotate-12" style={{ clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)' }}></div>
+      <div className="absolute top-1/2 left-10 w-32 h-32 opacity-30">
+        <div className="w-full h-full border-2 border-indigo-200 transform -rotate-12" style={{ clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)' }}></div>
       </div>
-       <div className="absolute bottom-10 right-1/3 w-40 h-40 opacity-5">
-        <div className="w-full h-full border border-red-400 rounded-full"></div>
+       <div className="absolute bottom-10 right-1/3 w-40 h-40 opacity-20">
+        <div className="w-full h-full border border-indigo-200 rounded-full"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Title */}
+        {/* Section Title - color is now inherited from the section */}
         <motion.h2 
           className="text-4xl md:text-5xl font-bold mb-16 md:mb-20 text-left"
           initial={{ opacity: 0, y: -20 }}
@@ -81,7 +81,7 @@ export const SponsorshipBenefits: React.FC = () => {
 
         {/* Grid layout for the benefit cards */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -90,23 +90,21 @@ export const SponsorshipBenefits: React.FC = () => {
           {benefitsData.map((benefit) => (
             <motion.div 
               key={benefit.id} 
-              className="flex items-start gap-6"
+              className="relative" // Set as relative for absolute positioning of children
               variants={itemVariants}
             >
-              {/* The red angled shape */}
-              <div className="flex-shrink-0 mt-1">
-                <div 
-                  className="w-20 h-20 bg-red-500" 
-                  style={{ clipPath: 'polygon(0 0, 100% 20%, 100% 80%, 0 100%)' }}
-                ></div>
-              </div>
+              {/* The gradient angled shape - changed from solid red to a gradient */}
+              <div 
+                className="w-full h-48 bg-gradient-to-br from-red-500 to-orange-500 shadow-xl" 
+                style={{ clipPath: 'polygon(0 0, 100% 15%, 100% 85%, 0 100%)' }}
+              ></div>
               
-              {/* Text Content */}
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-2">
+              {/* Text Content - Positioned absolutely to overlap the shape */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-center">
+                <h3 className="text-2xl font-bold text-white mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-base text-indigo-200 leading-relaxed">
+                <p className="text-base text-gray-200 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

@@ -67,8 +67,8 @@ const athletesData = [
     id: "saud-al-hogbani",
     name: "Saud Al Hogbani",
     sport: "Tennis",
-    galleryImage: "/athletes/gallery/saud.jpg", // Grayscale for gallery
-    profileImage: "/athletes/profile/saud.png", // Full color for profile
+    galleryImage: "/Person/1.jpg", // Grayscale for gallery
+    profileImage: "/Person/1.jpg", // Full color for profile
     logos: ["/logos/saudi-tennis.png"],
     competitions: [
       {
@@ -95,8 +95,8 @@ const athletesData = [
     id: "rakan-alireza",
     name: "Rakan Alireza",
     sport: "Rowing & Cross Country Skiing",
-    galleryImage: "/athletes/gallery/rakan.jpg",
-    profileImage: "/athletes/profile/rakan.png",
+    galleryImage: "/Person/2.jpg",
+    profileImage: "/Person/2.jpg",
     logos: ["/logos/saudi-rowing.png", "/logos/kona.png", "/logos/milan-cortina.png"],
     competitions: [
       {
@@ -123,8 +123,8 @@ const athletesData = [
     id: "abdullah-elkhereiji",
     name: "Abdullah Elkhereiji",
     sport: "Motor Racing",
-    galleryImage: "/athletes/gallery/abdullah.jpg",
-    profileImage: "/athletes/profile/abdullah.png",
+    galleryImage: "/Person/3.jpg",
+    profileImage: "/Person/3.jpg",
     logos: ["/logos/fia.png", "/logos/jameel.png", "/logos/lexus.png"],
     competitions: [
         {
@@ -143,8 +143,8 @@ const athletesData = [
     id: "abdulmohsen-bakhwain",
     name: "Abdulmohsen Bakhwain",
     sport: "Show Jumping",
-    galleryImage: "/athletes/gallery/abdulmohsen.jpg",
-    profileImage: "/athletes/profile/abdulmohsen.png",
+    galleryImage: "/Person/4.jpg",
+    profileImage: "/Person/4.jpg",
     logos: ["/logos/saef.png"],
     competitions: [
       {
@@ -232,11 +232,11 @@ const OurAthlete: React.FC = () => {
 
               {/* Text Content (Light Theme) */}
               <motion.div className="w-full md:w-7/12 z-10" variants={textContentVariants}>
-                <div className="flex items-center gap-4 mb-4">
+                {/* <div className="flex items-center gap-4 mb-4">
                     {athlete.logos.map((logo, i) => (
                         <img key={i} src={logo} alt="Sponsor" className="h-10 md:h-12 object-contain"/>
                     ))}
-                </div>
+                </div> */}
                 <h3 className="text-4xl lg:text-5xl font-extrabold text-gray-900">{athlete.name}</h3>
                 <p className="text-xl lg:text-2xl font-semibold text-purple-600 mt-1 mb-8">{athlete.sport}</p>
                 

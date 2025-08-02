@@ -59,7 +59,8 @@ const MarqueeTrack: React.FC<MarqueeTrackProps> = ({ direction }) => {
     const variants = direction === 'right-to-left' ? marqueeVariants_RTL : marqueeVariants_LTR;
     return (
         <motion.div
-            className="flex gap-16"
+            // Gap reduced to gap-8 for very little space
+            className="flex gap-8"
             variants={variants}
             animate="animate"
         >
@@ -80,16 +81,12 @@ const MarqueeTrack: React.FC<MarqueeTrackProps> = ({ direction }) => {
 // --- Main Social Stats Component ---
 export const SocialStatsMarquee: React.FC = () => {
     return (
-        // Height decreased with less vertical padding (py-16)
-        // Static background image added from the public folder
         <section
             className="relative w-full py-16 overflow-hidden font-sans bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/marqueeBg.jpg')" }}
+            style={{ backgroundImage: "url('/Marquee/marqueeBg.jpg')" }}
         >
-            {/* Optional: Add a dark overlay for better text contrast if needed */}
             <div className="absolute inset-0 bg-black/30 z-0"></div>
 
-            {/* Content container with reduced vertical spacing (space-y-12) */}
             <div className="relative z-10 w-full flex flex-col items-center space-y-12">
 
                 {/* --- Followers Section (Top Marquee) --- */}
@@ -97,17 +94,16 @@ export const SocialStatsMarquee: React.FC = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-white flex items-center gap-3">
                         Followers <FaInstagram />
                     </h2>
-                    {/* Reduced margin-top for tighter spacing */}
                     <div className="relative mt-8 w-full max-w-7xl overflow-hidden">
                         <MarqueeTrack direction="right-to-left" />
                     </div>
                     <motion.p
-                        className="mt-1 text-4xl md:text-5xl font-extrabold text-white tracking-tight"
+                        className="mt-1 text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight"
                         animate={{ scale: [1, 1.03, 1] }}
                         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                     >
                         Total Followers{' '}
-                        <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-purple-800 via-pink-700 to-orange-600 bg-clip-text text-transparent">
                             10.2M
                         </span>
                     </motion.p>
@@ -115,20 +111,19 @@ export const SocialStatsMarquee: React.FC = () => {
 
                 {/* --- Viewership Section (Bottom Marquee) --- */}
                 <div className="w-full flex flex-col items-center text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white flex items-center gap-3 mt-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white flex items-center gap-3 mt-16">
                         Viewership on <FaTwitter />
                     </h2>
-                    {/* Reduced margin-top for tighter spacing */}
                     <div className="relative mt-8 w-full max-w-7xl overflow-hidden">
                         <MarqueeTrack direction="left-to-right" />
                     </div>
                     <motion.p
-                        className="mt-8 text-4xl md:text-5xl font-extrabold text-white tracking-tight"
+                        className="mt-8 text-4xl md:text-5xl font-extrabold text-gray-800 tracking-tight"
                         animate={{ scale: [1, 1.03, 1] }}
                         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                     >
                         Total Followers{' '}
-                        <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                        <span className="bg-gradient-to-r from-cyan-700 to-blue-800 bg-clip-text text-transparent">
                             6.4M
                         </span>
                     </motion.p>

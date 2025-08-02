@@ -97,7 +97,7 @@ const listItemVariants:Variants = {
 const araNameSponsor = {
   title: 'ARA Name Sponsor',
   price: '500,000 SAR',
-  color: '#F56565', // A vibrant red
+  color: '#FFFFFF', // Changed to white for better contrast on the new gradient
   benefits: [
     'Name - ARA Management powered by (Your Brand)',
     'Logo placement on athlete’s jersey, caps, and equipment.',
@@ -186,20 +186,18 @@ const Sponsorship: React.FC = () => {
       </div>
 
       {/* ARA Name Sponsor Section */}
-      <div className="relative py-20 md:py-28 overflow-hidden bg-slate-900">
-        <motion.div 
-            className="absolute inset-0 bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900"
-            animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-            transition={{ duration: 20, repeat: Infinity, repeatType: 'mirror', ease: 'linear' }}
-            style={{ backgroundSize: '400% 400%' }}
+      <div className="relative py-20 md:py-28 overflow-hidden">
+        {/* The new vibrant gradient background */}
+        <div 
+            className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-pink-500 to-orange-500"
         />
         <motion.div className="relative container mx-auto px-6 max-w-4xl text-center text-white" variants={nameSponsorVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
-            <motion.h2 className="text-5xl md:text-6xl font-extrabold" style={{ textShadow: `0 0 20px ${araNameSponsor.color}` }} variants={listItemVariants}>{araNameSponsor.title}</motion.h2>
-            <motion.p className="text-3xl font-bold mt-2 mb-10" style={{ color: araNameSponsor.color }} variants={listItemVariants}>{araNameSponsor.price}</motion.p>
+            <motion.h2 className="text-5xl md:text-6xl font-extrabold" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.3)' }} variants={listItemVariants}>{araNameSponsor.title}</motion.h2>
+            <motion.p className="text-3xl font-bold mt-2 mb-10 text-white/90" variants={listItemVariants}>{araNameSponsor.price}</motion.p>
             <motion.ul className="text-lg md:text-xl text-left list-disc list-inside space-y-4" variants={containerVariants}>
                 {araNameSponsor.benefits.map((benefit, i) => <motion.li key={i} variants={listItemVariants}>{benefit}</motion.li>)}
             </motion.ul>
-            <motion.p className="text-xs text-gray-400 mt-8 pt-4 border-t border-white/20" variants={listItemVariants}>{araNameSponsor.note}</motion.p>
+            <motion.p className="text-xs text-white/70 mt-8 pt-4 border-t border-white/20" variants={listItemVariants}>{araNameSponsor.note}</motion.p>
         </motion.div>
       </div>
       

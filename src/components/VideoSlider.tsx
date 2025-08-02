@@ -148,7 +148,7 @@ const TRANSITION_DURATION = 700;
 const VideoSlider: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [direction, setDirection] = useState<'right' | 'left'>('right');
+  const [, setDirection] = useState<'right' | 'left'>('right');
   const slideCount = slides.length;
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const transitionRef = useRef<ReturnType<typeof setTimeout> | null>(null);
