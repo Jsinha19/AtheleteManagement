@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { motion } from 'framer-motion';
+import { motion,type Variants } from 'framer-motion';
 
 // --- Animation Variants ---
 
-const containerVariants = {
+const containerVariants:Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -12,7 +12,7 @@ const containerVariants = {
   }
 };
 
-const letterVariants = {
+const letterVariants :Variants= {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -22,7 +22,7 @@ const letterVariants = {
 };
 
 // For the top gallery cards
-const galleryCardVariants = {
+const galleryCardVariants:Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.9 },
   visible: {
     opacity: 1,
@@ -33,7 +33,7 @@ const galleryCardVariants = {
 };
 
 // For the main profile image sliding in
-const profileImageVariants = {
+const profileImageVariants :Variants= {
   hidden: { opacity: 0, x: -80, scale: 0.9 },
   visible: {
     opacity: 1,
@@ -44,7 +44,7 @@ const profileImageVariants = {
 };
 
 // For the text content block
-const textContentVariants = {
+const textContentVariants :Variants= {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -54,7 +54,7 @@ const textContentVariants = {
 };
 
 // For individual list items in the details section
-const listItemVariants = {
+const listItemVariants :Variants= {
   hidden: { opacity: 0, x: -20 },
   visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: 'easeOut' } }
 };

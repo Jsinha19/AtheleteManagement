@@ -180,11 +180,11 @@
 
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { motion } from 'framer-motion';
+import { motion,type Variants } from 'framer-motion';
 
 // --- Animation Variants ---
 
-const containerVariants = {
+const containerVariants:Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -192,7 +192,7 @@ const containerVariants = {
   }
 };
 
-const letterVariants = {
+const letterVariants:Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -204,7 +204,7 @@ const letterVariants = {
 // --- NEW ANIMATIONS for the column layout ---
 
 // For the image sliding in from the left
-const imageFromLeft = {
+const imageFromLeft:Variants = {
   hidden: { opacity: 0, x: -100, scale: 0.9 },
   visible: {
     opacity: 1,
@@ -215,7 +215,7 @@ const imageFromLeft = {
 };
 
 // For the image sliding in from the right
-const imageFromRight = {
+const imageFromRight:Variants = {
   hidden: { opacity: 0, x: 100, scale: 0.9 },
   visible: {
     opacity: 1,
@@ -226,7 +226,7 @@ const imageFromRight = {
 };
 
 // For the text content container
-const textContainerVariants = {
+const textContainerVariants:Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
@@ -235,7 +235,7 @@ const textContainerVariants = {
 };
 
 // For the name and line drawing
-const nameAndLineVariants = {
+const nameAndLineVariants :Variants= {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
@@ -245,7 +245,7 @@ const nameAndLineVariants = {
 };
 
 // For the line drawing itself
-const lineDrawVariant = {
+const lineDrawVariant:Variants = {
   hidden: { scaleX: 0, originX: 0 },
   visible: {
     scaleX: 1,
@@ -254,7 +254,7 @@ const lineDrawVariant = {
 };
 
 // For individual list items fading in
-const listItemVariants = {
+const listItemVariants:Variants = {
   hidden: { opacity: 0, x: -20 },
   visible: {
     opacity: 1,
@@ -266,7 +266,7 @@ const listItemVariants = {
 
 // --- Team Member Data ---
 
-const teamMembers = [
+const teamMembers :Variants= [
   {
     name: 'Rakan Alireza',
     image: '/team/rakan.png',

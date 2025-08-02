@@ -1,10 +1,10 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { motion } from 'framer-motion';
+import { motion,type Variants } from 'framer-motion';
 
 // --- Animation Variants ---
 
-const containerVariants = {
+const containerVariants:Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -12,7 +12,7 @@ const containerVariants = {
   }
 };
 
-const letterVariants = {
+const letterVariants:Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -22,7 +22,7 @@ const letterVariants = {
 };
 
 // --- NEW IMAGE ANIMATIONS ---
-const scaleInFadeUpVariants = {
+const scaleInFadeUpVariants:Variants = {
   hidden: { opacity: 0, scale: 0.9, y: 50 },
   visible: {
     opacity: 1,
@@ -32,7 +32,7 @@ const scaleInFadeUpVariants = {
   }
 };
 
-const flipInVariants = {
+const flipInVariants:Variants = {
   hidden: { opacity: 0, rotateX: -90, scale: 0.9 },
   visible: {
     opacity: 1,
@@ -42,7 +42,7 @@ const flipInVariants = {
   }
 };
 
-const nameSponsorVariants = {
+const nameSponsorVariants:Variants = {
     hidden: { opacity: 0, y: 80 },
     visible: {
         opacity: 1,
@@ -55,7 +55,7 @@ const nameSponsorVariants = {
     }
 };
 
-const cardFromLeftVariant = {
+const cardFromLeftVariant:Variants = {
   hidden: { opacity: 0, x: -100 },
   visible: {
     opacity: 1,
@@ -64,7 +64,7 @@ const cardFromLeftVariant = {
   }
 };
 
-const cardFromRightVariant = {
+const cardFromRightVariant:Variants = {
   hidden: { opacity: 0, x: 100 },
   visible: {
     opacity: 1,
@@ -73,7 +73,7 @@ const cardFromRightVariant = {
   }
 };
 
-const tierCardVariants = {
+const tierCardVariants:Variants = {
   hidden: { opacity: 0, y: 50, scale: 0.95 },
   visible: {
     opacity: 1,
@@ -83,7 +83,7 @@ const tierCardVariants = {
   }
 };
 
-const listItemVariants = {
+const listItemVariants:Variants = {
   hidden: { opacity: 0, x: -20 },
   visible: {
     opacity: 1,
