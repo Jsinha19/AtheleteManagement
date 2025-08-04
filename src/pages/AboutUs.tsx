@@ -142,7 +142,7 @@ const teamData = [
   }
 ];
 
-const decorativeBgPattern = "data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L80 25 L80 55 L50 70 L20 55 L20 25 Z' stroke='%23EF4444' stroke-width='2' fill='none' transform='rotate(15 50 40)'/%3E%3Cpath d='M120 80 L160 70 L170 110 L130 120 Z' fill='%23EF4444'/%3E%3Cpath d='M150 140 L180 155 L180 185 L150 200 L120 185 L120 155 Z' stroke='%23EF4444' stroke-width='2' fill='none' transform='rotate(-10 150 170)'/%3E%3Cpath d='M10 150 L50 140 L60 180 L20 190 Z' fill='%23EF4444'/%3E%3C/svg%3E";
+// const decorativeBgPattern = "data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L80 25 L80 55 L50 70 L20 55 L20 25 Z' stroke='%23EF4444' stroke-width='2' fill='none' transform='rotate(15 50 40)'/%3E%3Cpath d='M120 80 L160 70 L170 110 L130 120 Z' fill='%23EF4444'/%3E%3Cpath d='M150 140 L180 155 L180 185 L150 200 L120 185 L120 155 Z' stroke='%23EF4444' stroke-width='2' fill='none' transform='rotate(-10 150 170)'/%3E%3Cpath d='M10 150 L50 140 L60 180 L20 190 Z' fill='%23EF4444'/%3E%3C/svg%3E";
 
 // --- Main Component ---
 
