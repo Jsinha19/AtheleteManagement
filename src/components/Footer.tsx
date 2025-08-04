@@ -2,13 +2,11 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-white pt-16 px-6 md:px-20 pb-8 text-sm">
+    <footer className="bg-black text-white pt-12 px-6 md:px-20 pb-8 text-sm">
       <div className="max-w-7xl mx-auto">
-        {/* Logo */}
-        <div className="text-6xl font-serif font-bold text-left mb-10">
-          <span className="text-red-600 italic">A</span>
-          <span className="text-orange-500">ll</span>
-          <span className="text-pink-500"> in</span>
+        {/* Logo - Replaced the "All in" text with the ARA.png image */}
+        <div className="mb-10">
+          <img src="/ARA.png" alt="ARA Logo" className="h-20" />
         </div>
 
         {/* Contact Columns */}
@@ -41,10 +39,9 @@ const Footer: React.FC = () => {
           <p>© 2025 ARA.</p>
           <div className="space-x-4">
             <a href="#" className="hover:text-white">Privacy Notice</a>
-            <a href="#" className="hover:text-white">Cookie Notice</a>
-            <a href="#" className="hover:text-white">California Privacy Notice</a>
+            <a href="#" className="hover:text-white">Cookie Notice</a> 
             <a href="#" className="hover:text-white">Terms and Conditions</a>
-            <a href="#" className="hover:text-white">Modern Slavery Act Statement</a>
+
           </div>
         </div>
       </div>

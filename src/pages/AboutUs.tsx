@@ -1,9 +1,11 @@
+// src/pages/AboutUs.tsx
+
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
 import type { Variants } from "framer-motion";
 
-// --- Animation Variants ---
+// --- Animation Variants (Unchanged) ---
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -55,18 +57,12 @@ const missionContainerVariants: Variants = {
 };
 
 const missionItemVariants: Variants = {
-  hidden: { opacity: 0, y: 30, filter: 'blur(5px)' },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] }
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
   }
-};
-
-const missionHeadingVariants: Variants = {
-  hidden: { opacity: 0, x: -10 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
 };
 
 const imageVariants: Variants = {
@@ -98,7 +94,7 @@ const teamCardVariants: Variants = {
   }
 };
 
-// --- Data ---
+// --- Data (Unchanged) ---
 
 const teamData = [
   {
@@ -172,12 +168,12 @@ const AboutUs: React.FC = () => {
 
   return (
     <div className="relative">
-      {/* Navbar */}
+      {/* Navbar (Unchanged) */}
       <div className="absolute top-0 left-0 w-full z-20">
         <Navbar />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section (Unchanged) */}
       <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -203,7 +199,7 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      {/* Introduction Section */}
+      {/* Introduction Section (Unchanged) */}
       <motion.div
         className="relative w-full bg-white z-10 overflow-hidden py-12 mt-10 sm:mt-16"
         initial="hidden"
@@ -246,7 +242,7 @@ const AboutUs: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* IMAGE SECTION */}
+      {/* IMAGE SECTION (Unchanged) */}
       <motion.div
         className="relative w-full py-8 md:py-12 bg-gray-50 flex justify-center"
         variants={imageVariants}
@@ -268,45 +264,47 @@ const AboutUs: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/* MISSION BLOCK */}
+      {/* MISSION BLOCK (REDESIGNED) */}
       <motion.div
-        className="relative w-full py-16 md:py-20 bg-gradient-to-r from-purple-600 to-pink-500"
+        className="relative w-full py-16 md:py-20 bg-gray-50"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
+        variants={missionContainerVariants}
       >
-        <div className="container mx-auto px-6 max-w-4xl">
-          <motion.div variants={missionContainerVariants}>
-            <motion.h2 className="text-3xl md:text-4xl font-bold text-white mb-8" variants={missionItemVariants}>
+        <div className="container mx-auto px-6 max-w-6xl">
+            <motion.h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-20 text-center" variants={missionItemVariants}>
               Our mission is simple:
             </motion.h2>
-            <div className="space-y-8">
+            <div className="space-y-20">
               {missionPoints.map((point, idx) => (
-                <motion.div key={idx} variants={missionItemVariants}>
-                  <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                    <motion.strong
-                      className="font-bold text-pink-300 block mb-2"
-                      style={{ textShadow: '0 0 10px rgba(236, 72, 153, 0.7)' }}
-                      variants={missionHeadingVariants}
-                    >
-                      {point.heading}
-                    </motion.strong>
+                <motion.div 
+                  key={idx} 
+                  className="flex flex-col" 
+                  variants={missionItemVariants}
+                >
+                  {/* Heading aligned left */}
+                  <h3 className="w-full text-left text-4xl  md:text-5xl font-bold text-[#e95961]">
+                    {point.heading}
+                  </h3>
+
+                  {/* Paragraph centered below heading */}
+                  <p className="mt-6 text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto text-center">
                     {point.text}
                   </p>
                 </motion.div>
               ))}
               <motion.p
-                className="text-xl md:text-2xl text-white/90 pt-8 border-t border-white/20 leading-relaxed"
+                className="text-lg md:text-xl text-gray-700 text-center max-w-3xl mx-auto pt-16 border-t border-gray-200"
                 variants={missionItemVariants}
               >
                 {finalMissionParagraph}
               </motion.p>
             </div>
-          </motion.div>
         </div>
       </motion.div>
 
-      {/* --- OUR TEAM SECTION --- */}
+      {/* OUR TEAM SECTION (Unchanged) */}
       <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
@@ -350,7 +348,7 @@ const AboutUs: React.FC = () => {
                     className="relative z-10 w-full h-auto object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                   />
                 </div>
-                <div className="bg-white p-6 rounded-b-lg shadow-md flex-grow flex flex-col">
+                <div className="bg-white p-6 rounded-b-lg shadow-md flex-grow flex-col">
                   <h3 className="text-xl font-bold text-gray-900 text-center">{member.name}</h3>
                   <ul className="mt-4 text-gray-600 text-sm space-y-1.5 text-left list-disc list-inside flex-grow">
                     {member.roles.map((role, i) => <li key={i}>{role}</li>)}
@@ -362,7 +360,6 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer Spacer */}
       <div className="h-12 bg-white"></div>
     </div>
   );

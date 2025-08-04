@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
 
-// The data for the four benefit cards, extracted from your original code.
+// The data for the four benefit cards remains the same.
 const benefitsData = [
   {
     id: 1,
@@ -39,36 +39,36 @@ const containerVariants = {
 
 const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
+  visible: { 
     y: 0,
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: 'easeOut',  
     },
-  },
+  },   
 };
 
 // --- The Main Sponsorship Benefits Component ---
 export const SponsorshipBenefits: React.FC = () => {
   return (
     // Main section with a light shaded background
-    <section className="relative w-full bg-gray-100 text-gray-800 py-20 md:py-28 overflow-hidden font-sans">
+    <section className="relative w-full bg-gray-100 text-[#423b88] py-20 md:py-28 overflow-hidden font-sans">
       
-      {/* Decorative Background Elements adjusted for light background */}
-      <div className="absolute -top-10 -right-10 w-48 h-48 opacity-30">
-        <div className="w-full h-full border-2 border-indigo-200 transform rotate-45" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
+      {/* Decorative Background Elements updated to match the new color scheme */}
+      <div className="absolute -top-10 -right-10 w-48 h-48 opacity-20">
+        <div className="w-full h-full border-2 border-[#eb5b64] transform rotate-45" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }}></div>
       </div>
-      <div className="absolute top-1/2 left-10 w-32 h-32 opacity-30">
-        <div className="w-full h-full border-2 border-indigo-200 transform -rotate-12" style={{ clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)' }}></div>
+      <div className="absolute top-1/2 left-10 w-32 h-32 opacity-20">
+        <div className="w-full h-full border-2 border-[#eb5b64] transform -rotate-12" style={{ clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)' }}></div>
       </div>
-       <div className="absolute bottom-10 right-1/3 w-40 h-40 opacity-20">
-        <div className="w-full h-full border border-indigo-200 rounded-full"></div>
+       <div className="absolute bottom-10 right-1/3 w-40 h-40 opacity-10">
+        <div className="w-full h-full border border-[#eb5b64] rounded-full"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Title - color is now inherited from the section */}
+        {/* Section Title */}
         <motion.h2 
           className="text-4xl md:text-5xl font-bold mb-16 md:mb-20 text-left"
           initial={{ opacity: 0, y: -20 }}
@@ -93,9 +93,11 @@ export const SponsorshipBenefits: React.FC = () => {
               className="relative" // Set as relative for absolute positioning of children
               variants={itemVariants}
             >
-              {/* The gradient angled shape - changed from solid red to a gradient */}
+              {/* The gradient shape - size increased and colors updated */}
               <div 
-                className="w-full h-48 bg-gradient-to-br from-red-500 to-orange-500 shadow-xl" 
+                // Increased height from h-48 to h-64 for a bigger card size
+                // Updated color from red/orange to a new gradient using your color
+                className="w-full h-64 bg-gradient-to-br from-[#eb5b64] to-[#d44a53] shadow-xl" 
                 style={{ clipPath: 'polygon(0 0, 100% 15%, 100% 85%, 0 100%)' }}
               ></div>
               

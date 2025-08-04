@@ -186,11 +186,11 @@ const VideoSlider: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden bg-black">
+    <div className="relative w-full h-screen overflow-hidden bg-black">
       {/* Navbar on top */}
       <div className="absolute top-0 left-0 w-full z-20">
         <Navbar />
-      </div>
+      </div> 
 
       {/* Slides container */}
       <div
