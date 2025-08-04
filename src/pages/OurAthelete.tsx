@@ -176,16 +176,16 @@ const OurAthlete: React.FC = () => {
       <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
         <video className="absolute inset-0 w-full h-full object-cover" src="/videos/5.mp4" autoPlay loop muted playsInline />
         <div className="absolute inset-0 bg-black/40" />
-        <motion.h1 className="relative z-10 text-white font-extrabold text-[12vw] leading-none tracking-tight text-center select-none" style={{ textShadow: '0 4px 32px rgba(0,0,0,0.7)' }} variants={containerVariants} initial="hidden" animate="visible">
+        <motion.h1 className="relative z-10 text-white font-extrabold text-[12vw] leading-none tracking-tight text-center select-none" style={{ textShadow: '0 2px 24px rgba(0,0,0,0.4)' }} variants={containerVariants} initial="hidden" animate="visible">
           {letters.map((letter, i) => (
             <motion.span key={i} variants={letterVariants}>{letter === ' ' ? '\u00A0' : letter}</motion.span>
           ))}
         </motion.h1>
       </div>
       
-      {/* Athletes Gallery Section (REDESIGNED) */}
+      {/* Athletes Gallery Section (UPDATED) */}
       <div className="bg-gray-100 py-20 md:py-28">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8 md:px-12">
           <h2 className="text-center text-4xl md:text-5xl font-bold text-[#e95961] mb-16">Our Athletes</h2>
 
           <motion.div 
@@ -202,19 +202,19 @@ const OurAthlete: React.FC = () => {
                   variants={galleryCardVariants}
               >
                   {/* The relative container for positioning */}
-                  <div className="relative h-96">
+                  <div className="relative h-80">
                       <img 
                           src={athlete.galleryImage} 
                           alt={athlete.name} 
                           className="w-full h-full object-cover grayscale rounded-lg shadow-xl transition-all duration-300 transform group-hover:scale-105" 
                       />
-                      {/* Name Banner - Repositioned to the bottom and shifted down */}
+                      {/* Name Banner - Wider and less bold */}
                       <div 
-                          className="absolute bottom-[-60px] left-4 h-28 w-4/5 bg-[#423b88] flex flex-col justify-center rounded-lg shadow-2xl text-white pl-6 text-c"
+                          className="absolute bottom-[-50px] -right-6 h-28 w-11/12 bg-[#423b88] flex flex-col justify-center rounded-lg shadow-2xl text-white px-6 text-right"
                           style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)' }}
                       >
                           {athlete.name.split(' ').map((word, i) => (
-                              <span key={i} className="block font-bold text-2xl leading-tight">{word}</span>
+                              <span key={i} className="block font-semibold text-2xl leading-tight">{word}</span>
                           ))}
                       </div>
                   </div>
@@ -250,7 +250,7 @@ const OurAthlete: React.FC = () => {
                             <motion.h4 className="text-lg font-bold text-gray-800 border-b-2 border-red-200 pb-2 mb-3" variants={listItemVariants}>
                                 {comp.category}
                             </motion.h4>
-                            <ul className="space-y-2 text-gray-600 list-disc list-inside">
+                            <ul className="space-y-2 text-gray-600 list-.disc list-inside">
                                 {comp.list.map((item, i) => <motion.li key={i} variants={listItemVariants}>{item}</motion.li>)}
                             </ul>
                         </motion.div>
@@ -263,6 +263,6 @@ const OurAthlete: React.FC = () => {
       </div>
     </div>
   );
-};
+}; 
 
 export default OurAthlete;

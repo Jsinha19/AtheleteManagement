@@ -209,7 +209,7 @@ const MarqueeTrack: React.FC<MarqueeTrackProps> = ({ logos, direction }) => {
             {/* Repeat logos to create a seamless loop */}
             {[...logos, ...logos].map((partner, index) => (
                 // Logo size reduced
-                <div key={`${partner.id}-${index}`} className="flex-shrink-0 w-28 h-16 bg-white/80 p-2 rounded-lg flex items-center justify-center shadow-md">
+                <div key={`${partner.id}-${index}`} className="flex-shrink-0 w-28 h-16 bg-white/10 p-2 rounded-lg flex items-center justify-center shadow-md">
                     <img
                         src={partner.logo}
                         alt={`${partner.id} logo`}
@@ -244,7 +244,7 @@ export const SocialStatsMarquee: React.FC = () => {
                     </div>
 
                     <div className="w-full md:w-1/2 text-left md:pl-10">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white flex items-center gap-3 mb-4">
+                        <h2 className="text-3xl md:text-4xl font-semibold text-white flex items-center gap-3 mb-4">
                             Followers <FaInstagram />
                         </h2>
                         <motion.p
@@ -270,7 +270,7 @@ export const SocialStatsMarquee: React.FC = () => {
                     </div>
 
                     <div className="w-full md:w-1/2 text-left md:pr-10">
-                         <h2 className="text-3xl md:text-4xl font-bold text-white flex items-center gap-3 mb-4">
+                         <h2 className="text-3xl md:text-4xl font-semibold text-white flex items-center gap-3 mb-4">
                             Viewership on <FaTwitter />
                         </h2>
                         <motion.p

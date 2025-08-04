@@ -1,11 +1,9 @@
-// src/pages/AboutUs.tsx
-
 import React from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
 import type { Variants } from "framer-motion";
 
-// --- Animation Variants (Unchanged) ---
+// --- Animation Variants ---
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -57,12 +55,18 @@ const missionContainerVariants: Variants = {
 };
 
 const missionItemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 30, filter: 'blur(5px)' },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
+    filter: 'blur(0px)',
+    transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] }
   }
+};
+
+const missionHeadingVariants: Variants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.8 } }
 };
 
 const imageVariants: Variants = {
@@ -94,7 +98,7 @@ const teamCardVariants: Variants = {
   }
 };
 
-// --- Data (Unchanged) ---
+// --- Data ---
 
 const teamData = [
   {
@@ -151,15 +155,15 @@ const AboutUs: React.FC = () => {
 
   const missionPoints = [
     {
-      heading: 'Empowering Athletes:',
+      heading: 'Empowering Athletes',
       text: 'We give athletes the support, resources, and sponsorships they need to succeed locally and internationally. Our goal is to help build a stronger sports culture in Saudi Arabia.',
     },
     {
-      heading: 'Delivering Value to Businesses:',
+      heading: 'Delivering Value to Businesses',
       text: 'We connect companies with a fast-growing market of athletes who have loyal fans. Sponsoring athletes is not just support, it is smart marketing that boosts brand visibility and builds real connections with communities.',
     },
     {
-      heading: 'Unique relationship:',
+      heading: 'Unique relationship',
       text: 'partnering with our athletes builds authentic trust with audiences. We bring credibility, discipline and integrity that deeply resonate trust with consumers. Our athlete’s inspiring stories will strengthen our partners reputation and long term trust with customers.',
     },
   ];
@@ -168,12 +172,12 @@ const AboutUs: React.FC = () => {
 
   return (
     <div className="relative">
-      {/* Navbar (Unchanged) */}
+      {/* Navbar */}
       <div className="absolute top-0 left-0 w-full z-20">
         <Navbar />
       </div>
 
-      {/* Hero Section (Unchanged) */}
+      {/* Hero Section */}
       <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -184,7 +188,7 @@ const AboutUs: React.FC = () => {
         <div className="relative z-10 w-full flex justify-center items-center h-full">
           <motion.h1
             className="text-white font-extrabold text-[12vw] leading-none tracking-tight text-center select-none"
-            style={{ textShadow: '0 4px 32px rgba(0,0,0,0.7)' }}
+            style={{ textShadow: '0 2px 24px rgba(0,0,0,0.4)' }}
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -199,7 +203,7 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      {/* Introduction Section (Unchanged) */}
+      {/* Introduction Section */}
       <motion.div
         className="relative w-full bg-white z-10 overflow-hidden py-12 mt-10 sm:mt-16"
         initial="hidden"
@@ -242,7 +246,7 @@ const AboutUs: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* IMAGE SECTION (Unchanged) */}
+      {/* IMAGE SECTION */}
       <motion.div
         className="relative w-full py-8 md:py-12 bg-gray-50 flex justify-center"
         variants={imageVariants}
@@ -264,51 +268,65 @@ const AboutUs: React.FC = () => {
         </motion.div>
       </motion.div>
 
-      {/* MISSION BLOCK (REDESIGNED) */}
-      <motion.div
-        className="relative w-full py-16 md:py-20 bg-gray-50"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={missionContainerVariants}
-      >
-        <div className="container mx-auto px-6 max-w-6xl">
-            <motion.h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-20 text-center" variants={missionItemVariants}>
-              Our mission is simple:
-            </motion.h2>
-            <div className="space-y-20">
-              {missionPoints.map((point, idx) => (
-                <motion.div 
-                  key={idx} 
-                  className="flex flex-col" 
-                  variants={missionItemVariants}
-                >
-                  {/* Heading aligned left */}
-                  <h3 className="w-full text-left text-4xl  md:text-5xl font-bold text-[#e95961]">
-                    {point.heading}
-                  </h3>
-
-                  {/* Paragraph centered below heading */}
-                  <p className="mt-6 text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto text-center">
-                    {point.text}
-                  </p>
-                </motion.div>
-              ))}
-              <motion.p
-                className="text-lg md:text-xl text-gray-700 text-center max-w-3xl mx-auto pt-16 border-t border-gray-200"
-                variants={missionItemVariants}
-              >
-                {finalMissionParagraph}
-              </motion.p>
-            </div>
-        </div>
-      </motion.div>
-
-      {/* OUR TEAM SECTION (Unchanged) */}
+      {/* --- OUR MISSION SECTION --- */}
       <section className="bg-white py-20 md:py-28">
         <div className="container mx-auto px-4">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 bg-[length:200%_auto]"
+            className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-[#423b88] via-purple-500 to-pink-500 bg-[length:200%_auto]"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ backgroundPosition: ['0% 50%', '200% 50%', '0% 50%'] }}
+            transition={{
+              opacity: { duration: 0.8, ease: 'easeOut' },
+              y: { duration: 0.8, ease: 'easeOut' },
+              backgroundPosition: { duration: 10, repeat: Infinity, ease: 'linear' },
+            }}
+            viewport={{ once: true }}
+          >
+            Our Mission is simple 
+          </motion.h2>
+
+          {/* MISSION BLOCK */}
+          <motion.div
+            className="relative w-full py-16 md:py-20 bg-gradient-to-r from-[#e95961] to-[#f18e93] rounded-xl shadow-2xl"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <div className="container mx-auto px-6 max-w-4xl">
+              <motion.div variants={missionContainerVariants}>
+                <div className="space-y-12">
+                  {missionPoints.map((point, idx) => (
+                    <motion.div key={idx} variants={missionItemVariants}>
+                      <p className="text-xl md:text-2xl text-white/90 leading-relaxed text-left">
+                        <motion.strong
+                          className="font-semibold block mb-3 text-2xl md:text-5xl bg-clip-text text-[#423b88] "
+                          variants={missionHeadingVariants}
+                        >
+                          {point.heading}
+                        </motion.strong>
+                        {point.text}
+                      </p>
+                    </motion.div>
+                  ))}
+                  <motion.p
+                    className="text-lg md:text-xl text-white/90 pt-8 border-t border-white/20 leading-relaxed"
+                    variants={missionItemVariants}
+                  >
+                    {finalMissionParagraph}
+                  </motion.p>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* --- OUR TEAM SECTION (UPDATED) --- */}
+      <section className="bg-white py-20 md:py-28">
+        <div className="container mx-auto px-8">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-center mb-24 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 bg-[length:200%_auto]"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             animate={{ backgroundPosition: ['0% 50%', '200% 50%', '0% 50%'] }}
@@ -322,37 +340,42 @@ const AboutUs: React.FC = () => {
             Our Team
           </motion.h2>
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-32"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             {teamData.map((member) => (
               <motion.div
                 key={member.name}
-                className="flex flex-col group"
+                className="group"
                 variants={teamCardVariants}
               >
-                <div
-                  className="relative overflow-hidden shadow-lg"
-                  style={{ clipPath: 'polygon(0 0, 100% 15%, 100% 100%, 0 100%)' }}
-                >
-                  <div
-                    className="absolute inset-0 bg-indigo-900 opacity-70"
-                    style={{ backgroundImage: `url("${decorativeBgPattern}")` }}
-                  />
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="relative z-10 w-full h-auto object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                  />
+                {/* Container for image and the banner that hangs off it */}
+                <div className="relative mb-4 h-96">
+                    <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover rounded-lg shadow-lg transition-transform duration-500 ease-in-out group-hover:scale-105"
+                    />
+                    
+                    {/* Name Banner - Smaller and positioned from the left */}
+                    <div 
+                        className="absolute bottom-[-30px] -left-6 h-24 w-5/6 bg-[#423b88] flex flex-col justify-center rounded-lg shadow-2xl text-white px-6 text-left"
+                        style={{ clipPath: 'polygon(0 0, 85% 0, 100% 100%, 0% 100%)' }}
+                    >
+                        {member.name.split(' ').map((word, i) => (
+                            <span key={i} className="block font-semibold text-xl leading-tight">{word}</span>
+                        ))}
+                    </div>
                 </div>
-                <div className="bg-white p-6 rounded-b-lg shadow-md flex-grow flex-col">
-                  <h3 className="text-xl font-bold text-gray-900 text-center">{member.name}</h3>
-                  <ul className="mt-4 text-gray-600 text-sm space-y-1.5 text-left list-disc list-inside flex-grow">
-                    {member.roles.map((role, i) => <li key={i}>{role}</li>)}
-                  </ul>
+
+                {/* Roles list positioned below the image/banner combo */}
+                <div className="pt-16">
+                    <ul className="text-gray-600 text-sm space-y-1.5 list-disc list-inside">
+                        {member.roles.map((role, i) => <li key={i}>{role}</li>)}
+                    </ul>
                 </div>
               </motion.div>
             ))}
@@ -360,6 +383,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
+      {/* Footer Spacer */}
       <div className="h-12 bg-white"></div>
     </div>
   );

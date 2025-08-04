@@ -8,6 +8,7 @@ import OurAthelete from './pages/OurAthelete';
 import AboutUs from './pages/AboutUs';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import ScrollToTop from './components/ScrollToTop';
 
 const AppContent: React.FC = () => {
   const location = useLocation();
@@ -26,11 +27,13 @@ const AppContent: React.FC = () => {
 
   if (showLoader) return <Loader onFinish={function (): void {
     throw new Error('Function not implemented.');
-  } }/>; // No navbar/footer while loader
+  }} />; // No navbar/footer while loader
 
   return (
     <>
       {/* <Navbar /> */}
+      <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/our-team" element={<OurTeam />} />

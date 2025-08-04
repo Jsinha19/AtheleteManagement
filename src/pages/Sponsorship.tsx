@@ -165,7 +165,7 @@ const Sponsorship: React.FC = () => {
       <div className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
         <video className="absolute inset-0 w-full h-full object-cover" src="/videos/5.mp4" autoPlay loop muted playsInline />
         <div className="absolute inset-0 bg-black/40" />
-        <motion.h1 className="relative z-10 text-white font-extrabold text-[12vw] leading-none tracking-tight text-center select-none" style={{ textShadow: '0 4px 32px rgba(0,0,0,0.7)' }} variants={containerVariants} initial="hidden" animate="visible" >
+        <motion.h1 className="relative z-10 text-white font-extrabold text-[12vw] leading-none tracking-tight text-center select-none" style={{ textShadow: '0 2px 24px rgba(0,0,0,0.4)' }} variants={containerVariants} initial="hidden" animate="visible" >
             {letters.map((letter, i) => (
               <motion.span key={i} variants={letterVariants}>{letter === ' ' ? '\u00A0' : letter}</motion.span>
             ))}
