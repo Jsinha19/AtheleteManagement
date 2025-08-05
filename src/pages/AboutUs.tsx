@@ -103,7 +103,7 @@ const teamCardVariants: Variants = {
 const teamData = [
   {
     name: "Rakan Alireza",
-    image: "/Person/1.jpg",
+    image: "/Person/9.jpg",
     roles: [
       "PwC Consulting",
       "Athlete for Saudi Rowing Federation and Skiing Federation",
@@ -112,7 +112,7 @@ const teamData = [
   },
   {
     name: "Abdullah Elkhereiji",
-    image: "/Person/2.jpg",
+    image: "/Person/6.jpg",
     roles: [
       "Director of Business Development & Public Relations",
       "Maydan Advanced Construction CO.",
@@ -121,7 +121,7 @@ const teamData = [
   },
   {
     name: "Abdulmohsen Bakhwain",
-    image: "/Person/3.jpg",
+    image: "/Person/11.jpg",
     roles: [
       "AMB Ventures - Founder & CEO",
       "Built In Market Food Tech Solutions",
@@ -133,7 +133,7 @@ const teamData = [
   },
   {
     name: "Abdulrahman Garoub",
-    image: "/Person/4.jpg",
+    image: "/Person/10.jpg",
     roles: [
       "Sports & Entertainment Consultant",
       "Professional Racer",

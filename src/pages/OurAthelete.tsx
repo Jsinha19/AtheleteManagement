@@ -63,8 +63,8 @@ const athletesData = [
     id: "saud-al-hogbani",
     name: "Saud Al Hogbani",
     sport: "Tennis",
-    galleryImage: "/Person/1.jpg",
-    profileImage: "/Person/1.jpg",
+    galleryImage: "/Person/8.jpg",
+    profileImage: "/Person/8.jpg",
     logos: ["/logos/saudi-tennis.png"],
     competitions: [
       {
@@ -91,8 +91,8 @@ const athletesData = [
     id: "rakan-alireza",
     name: "Rakan Alireza",
     sport: "Rowing & Cross Country Skiing",
-    galleryImage: "/Person/2.jpg",
-    profileImage: "/Person/2.jpg",
+    galleryImage: "/Person/9.jpg",
+    profileImage: "/Person/7.jpg",
     logos: ["/logos/saudi-rowing.png", "/logos/kona.png", "/logos/milan-cortina.png"],
     competitions: [
       {
@@ -119,8 +119,8 @@ const athletesData = [
     id: "abdullah-elkhereiji",
     name: "Abdullah Elkhereiji",
     sport: "Motor Racing",
-    galleryImage: "/Person/3.jpg",
-    profileImage: "/Person/3.jpg",
+    galleryImage: "/Person/61.png",
+    profileImage: "/Person/12.jpeg",
     logos: ["/logos/fia.png", "/logos/jameel.png", "/logos/lexus.png"],
     competitions: [
         {
@@ -139,8 +139,8 @@ const athletesData = [
     id: "abdulmohsen-bakhwain",
     name: "Abdulmohsen Bakhwain",
     sport: "Show Jumping",
-    galleryImage: "/Person/4.jpg",
-    profileImage: "/Person/4.jpg",
+    galleryImage: "/Person/5.jpg",
+    profileImage: "/Person/13.jpeg",
     logos: ["/logos/saef.png"],
     competitions: [
       {
@@ -206,7 +206,7 @@ const OurAthlete: React.FC = () => {
                       <img 
                           src={athlete.galleryImage} 
                           alt={athlete.name} 
-                          className="w-full h-full object-cover grayscale rounded-lg shadow-xl transition-all duration-300 transform group-hover:scale-105" 
+                          className=" h-full object-contain w-fit max-w-[300px] grayscale rounded-lg shadow-xl transition-all duration-300 transform group-hover:scale-105" 
                       />
                       {/* Name Banner - Wider and less bold */}
                       <div 

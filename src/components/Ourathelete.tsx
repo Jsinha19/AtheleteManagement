@@ -3,26 +3,26 @@ import React from 'react';
 // Athlete data updated with new color schemes using your provided hex codes
 const athletes = [
   {
-    name: 'Saud Al-Hoghani',
-    image: '/Person/1.jpg',
+    name: 'Saud Al-Hogbani',
+    image: '/Person/8.jpg',
     // Using the dark blue/purple gradient
     color: 'from-[#e95961] to-[#d04a51]' 
   },
   {
-    name: 'Rakan Almaro',
-    image: '/Person/2.jpg',
+    name: 'Rakan Alireza',
+    image: '/Person/7.jpg',
     // Using the reddish-pink gradient
     color: 'from-[#e95961] to-[#d04a51]'
   },
   {
-    name: 'Abdulaziz Elkhonery',
-    image: '/Person/3.jpg',
+    name: 'Abdullah  Elkhereiji',
+    image: '/Person/6.png',
     // Alternating back to the dark blue/purple gradient
     color: 'from-[#e95961] to-[#d04a51]'
   },
   {
-    name: 'Abdalrahman Bakhrman',
-    image: '/Person/4.jpg',
+    name: 'Abdulmohsen Bakhwain',
+    image: '/Person/5.jpg',
     // Alternating back to the reddish-pink gradient
     color: 'from-[#e95961] to-[#d04a51]'
   },

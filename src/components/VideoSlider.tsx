@@ -126,17 +126,17 @@ interface SlideData {
 
 const slides: SlideData[] = [
   {
-    src: "/videos/1.mp4",
+    src: "/videos/8.mp4",
     bottomLeftText: "Simone Biles: \"Simone Biles Rising\"",
     learnMoreLink: "#",
   },
   {
-    src: "/videos/2.mp4",
+    src: "/videos/9.mp4",
     bottomLeftText: "Discover the power of success",
     learnMoreLink: "#",
   },
   {
-    src: "/videos/3.mp4",
+    src: "/videos/10.mp4",
     bottomLeftText: "Explore new horizons",
     learnMoreLink: "#",
   },
